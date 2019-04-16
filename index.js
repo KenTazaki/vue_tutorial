@@ -64,3 +64,24 @@ var app7 = new Vue({
     ]
   }
 })
+
+var obj = { 
+  foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new  Vue({
+  el: '#app8',
+  data: obj
+})
+
+var data = { a: 1 }
+var vm = new Vue({
+  el: '#app9',
+  data: data
+})
+
+vm.$watch('a', function( newValue, oldValue){
+  console.log(oldValue + ' is changed to ' + newValue)
+})
