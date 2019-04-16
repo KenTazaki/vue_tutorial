@@ -53,6 +53,34 @@
     <div id="app9">
       <p>app9 for console</p>
     </div>
+
+    <div id ="app10">
+      <span>Message: {{ msg }}</span>
+      <span v-once>This will never change: {{ msg }}</span>
+      <p><button v-on:click="reverseMsg">Reverse Message</button></p>
+      <p>Using mustaches: {{ rawHtml }}</p>
+      <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+      <div v-bind:id = "dynamicId"></div>
+      <button v-bind:disabled="isButtonDisabled">Button</button>
+      <p>Upper Button is {{ isButtonDisabled ? 'disabled' : 'abled' }}</p>
+
+      <p  v-if="seen">Now you see me</p>
+
+      <a v-bind:href="url">Ruby documents</a>
+      <a v-on:click="doSomething">alert</a>
+      <!-- <a v-bind:[attributeName]="url">DynamicAttribute</a>
+      <a v-on:[eventName]="doSomething">DynamicalOn</a> -->
+
+      <form v-on:submit.prevent="onSubmit">
+        <input v-model='textPrevent'>
+        <button type="submit">submit</button>
+      </form>
+
+      <a :href="url">Ruby documents</a>
+      <a @click="doSomething">alert</a>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>

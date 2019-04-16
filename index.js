@@ -85,3 +85,28 @@ var vm = new Vue({
 vm.$watch('a', function( newValue, oldValue){
   console.log(oldValue + ' is changed to ' + newValue)
 })
+
+var app10 = new Vue({
+  el: '#app10',
+  data: {
+    msg: 'message',
+    rawHtml: '<span style="color: red">This should be red.</span>',
+    dynamicId: 'app10-dynamical',
+    isButtonDisabled: true,
+    seen: true,
+    url: 'https://www.ruby-lang.org/ja/', 
+    attributeName: 'href',
+    eventName: 'focus'
+  },
+  methods: {
+    reverseMsg: function() {
+      this.msg = this.msg.split('').reverse().join('')
+    },
+    doSomething: function() {
+      alert(this.url)
+    },
+    onSubmit: function() {
+      alert(this.textPrevent)
+    }
+  }
+})
